@@ -36,3 +36,8 @@ python main.py
 ```
 https://github.com/duyvuleo/VNTC/tree/master/Data/10Topics/Ver1.1
 ```
+
+### Tham khảo:
+```
+https://viblo.asia/p/phan-loai-van-ban-tieng-viet-tu-dong-phan-1-yMnKM3bal7P
+```
