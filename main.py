@@ -47,36 +47,6 @@ class Classifier(object):
         logging.info(('Accurancy: ',self.estimator.score(self.features_test,self.labels_test)))
         logging.info((classification_report(y_true, y_pred)))
 
-def plot_confusion_matrix(cm, 
-                          normalize=False,
-                          title='Confusion matrix'):
-    classes= ["Chinh tri Xa hoi","Doi song","Khoa hoc","Kinh doanh","Phap luat","Suc khoe","The gioi","The thao","Van hoa","Vi tinh"]
-    plt.figure()
-    # if normalize:
-    #     cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-    #     print("Normalized confusion matrix")
-    # else:
-    #     print('Confusion matrix, without normalization')
-        
-    plt.imshow(cm, interpolation='nearest',cmap=plt.cm.Blues)
-    plt.title(title)
-    plt.colorbar()
-    tick_marks = np.arange(len(classes))
-    plt.xticks(tick_marks, classes, rotation=45)
-    plt.yticks(tick_marks, classes)
-
-    fmt = '.2f' if normalize else 'd'
-    thresh = cm.max() / 2.
-    for i, j in itertools.product(list(range(cm.shape[0])), list(range(cm.shape[1]))):
-        plt.text(j, i, format(cm[i, j], fmt),
-                 horizontalalignment="center",
-                 color="white" if cm[i, j] > thresh else "black")
-
-    plt.tight_layout()
-    plt.ylabel('True label')
-    plt.xlabel('Predicted label')
-    plt.show()             
-
 if __name__ == '__main__':
     # Read feature extraction 
     print(('Reading Feature Extraction... ',  str(datetime.now())))
