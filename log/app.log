@@ -1,0 +1,23 @@
+INFO:root:('Training by SVM classification ... ', '2019-05-07 22:37:36.279784')
+INFO:root:
+Model: LinearSVC
+C = 50
+Penalty='l2'
+Max_iter = 20
+INFO:root:('Accurancy: ', 0.9081)
+INFO:root:          precision   recall   f1-score   support
+
+Chinh tri Xa hoi       0.79      0.91      0.84      1000
+        Doi song       0.92      0.68      0.78      1000
+        Khoa hoc       0.92      0.83      0.87      1000
+      Kinh doanh       0.95      0.92      0.93      1000
+       Phap luat       0.95      0.94      0.94      1000
+        Suc khoe       0.90      0.95      0.92      1000
+        The gioi       0.92      0.94      0.93      1000
+        The thao       0.98      0.99      0.98      1000
+         Van hoa       0.86      0.96      0.91      1000
+         Vi tinh       0.94      0.96      0.95      1000
+
+     avg / total       0.91      0.91      0.91     10000
+
+INFO:root:('Training by SVM Done! ', '2019-05-07 22:38:49.545067')
