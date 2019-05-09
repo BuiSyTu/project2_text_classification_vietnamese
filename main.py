@@ -42,8 +42,6 @@ class Classifier(object):
 
     def __training_result(self):
         y_true, y_pred = self.labels_test, self.estimator.predict(self.features_test)
-        cnf_matrix = confusion_matrix(y_true, y_pred)
-        plot_confusion_matrix(cnf_matrix, title='Confusion matrix from LinearSVC')
         print(( 'Accurancy: ',self.estimator.score(self.features_test,self.labels_test)))
         print((classification_report(y_true, y_pred)))
         logging.info(('Accurancy: ',self.estimator.score(self.features_test,self.labels_test)))
@@ -88,34 +86,13 @@ if __name__ == '__main__':
     features_test, labels_test = FeatureExtraction(data=features_test_loader).read_feature()
     print(('Read Feature Extraction Done! ',  str(datetime.now())))
 
-    # # KNeighbors Classifier
-    # print 'Training by KNeighbors Classifier ...'
-    # estKNeighbors = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator=KNeighborsClassifier(n_neighbors=3))
-    # estKNeighbors.training()
-    # estKNeighbors.save_model(filePath='trained_model/knn_model_tfidf.pk') # save Model
-    # print 'Training by KNeighbors Classifier Done !'
-    
-    # # SVM Classifier 
-    # print 'Training by SVM Classifier ...'
-    # estSVM = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator= LinearSVC(penalty='l2', C= 4))
-    # estSVM.training()
-    # estSVM.save_model(filePath='trained_model/svm_model.pk') # save Model
-    # print 'Training by SVM Classifier Done !'
-
-    # # RandomForest Classifier
-    # print 'Training by RandomForest Classifier ...'
-    # estRandomForest = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator=RandomForestClassifier())
-    # estRandomForest.training()
-    # estRandomForest.save_model(filePath='trained_model/random_forest_model.pk') # save Model
-    # print 'Training by RandomForest Classifier Done ! '
     logging.basicConfig(filename=settings.LOG_FILE, level=logging.INFO)
     logging.info(('Training by SVM classification ... ',  str(datetime.now())))
     print('Training by SVM classification ...', str(datetime.now()))
-    logging.info('\nModel: LinearSVC\nC = 50\nPenalty=\'l2\'\nMax_iter = 20')
-    # estLogistic = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator=LogisticRegression(penalty='l2',max_iter=20,C=30))
-    estLogistic = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test, estimator = LinearSVC(random_state=0, C=50, max_iter=20))
-    estLogistic.training()
-    estLogistic.save_model(filePath='trained_model/linearSVC_Bow_model.pk') # save Model
+    logging.info('\nModel: LinearSVC\nC = 10\nPenalty=\'l2\'\nMax_iter = 10')
+    estSVC = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test, estimator = LinearSVC(random_state=0, C=10, max_iter=10))
+    estSVC.training()
+    estSVC.save_model(filePath=settings.LINEARSVC_TFIDF_MODEL) # save Model
     print('Training by SVC Classifier Done !', str(datetime.now()))
     logging.info(('Training by SVM Done! ',  str(datetime.now())))
     

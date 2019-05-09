@@ -10,7 +10,7 @@ penalty =['l2']
 Cs=[0.1,1,10,20, 50]
 X=[1,3,5,7,10]
 X_axis=["1:l2","10:l2", "20:l2", "50:l2","100:l2"]
-scores = np.load('drawChart.npy')
+scores = np.load('drawChart_1.npy')
 print(scores)
 
 

@@ -100,7 +100,7 @@ if __name__ == '__main__':
     print('Reading data raw... ',  str(datetime.now()))
     json_train = DataLoader(dataPath=settings.DATA_TRAIN_PATH).get_json_train()
     FileStore(filePath=settings.DATA_TRAIN_JSON, data=json_train).store_json()
-    json_test = DataLoader(dataPath=settings.DATA_TEST_PATH).get_json_test(1000)
+    json_test = DataLoader(dataPath=settings.DATA_TEST_PATH).get_json_test(2000)
     FileStore(filePath=settings.DATA_TEST_JSON, data=json_test).store_json()
     print('Load Data to JSON Done! ', str(datetime.now()))
           
