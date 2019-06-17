@@ -1,5 +1,5 @@
-# Vietnamese-Text-Classification
-Vietnamese Text Classification
+# Vietnamese-News-Classification
+Vietnamese News Classification
 ## Môi trường:
 ```
 python3
@@ -20,6 +20,11 @@ python classification_text.py --text "text document"
 ```
 ./mkdir.sh
 ```
+### Dữ liệu được lấy từ link:
+```
+https://github.com/duyvuleo/VNTC/tree/master/Data/10Topics/Ver1.1
+```
+- Giải nén dữ liệu thêm dữ liệu training và testing lần lượt vào các thư mục train và test theo cấu trúc của ảnh datastruct.png
 #### Xây dựng dữ liệu & Tiền xử lý
 ```
 python preProcessData.py
@@ -32,10 +37,7 @@ python preProcessData.py
 python main.py
 ```
 - File model lưu trong thư mục trained_model
-### Dữ liệu được lấy từ link:
-```
-https://github.com/duyvuleo/VNTC/tree/master/Data/10Topics/Ver1.1
-```
+
 
 ### Tham khảo:
 ```
