@@ -20,12 +20,12 @@ python classification_text.py --text "text document"
 ```
 ./mkdir.sh
 ```
-### Dữ liệu được lấy từ link:
+- Dữ liệu được lấy từ link: [link](https://github.com/duyvuleo/VNTC/tree/master/Data/10Topics/Ver1.1)
 ```
 https://github.com/duyvuleo/VNTC/tree/master/Data/10Topics/Ver1.1
 ```
 - Giải nén dữ liệu thêm dữ liệu training và testing lần lượt vào các thư mục train và test theo cấu trúc của ảnh datastruct.png
-#### Xây dựng dữ liệu & Tiền xử lý
+### Xây dựng dữ liệu & Tiền xử lý
 ```
 python preProcessData.py
 ```
@@ -38,8 +38,8 @@ python main.py
 ```
 - File model lưu trong thư mục trained_model
 
-
-### Tham khảo:
+Tham khảo: [link](https://viblo.asia/p/phan-loai-van-ban-tieng-viet-tu-dong-phan-1-yMnKM3bal7P)
 ```
 https://viblo.asia/p/phan-loai-van-ban-tieng-viet-tu-dong-phan-1-yMnKM3bal7P
 ```
+
