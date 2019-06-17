@@ -43,7 +43,7 @@ class Classifier(object):
     def __training_result(self):
         y_true, y_pred = self.labels_test, self.estimator.predict(self.features_test)
         cnf_matrix = confusion_matrix(y_true, y_pred)
-        plot_confusion_matrix(cnf_matrix, title='Confusion matrix from LinearSVC')
+        plot_confusion_matrix(cnf_matrix,normalize=False, title='Confusion matrix from LinearSVC')
         print(( 'Accurancy: ',self.estimator.score(self.features_test,self.labels_test)))
         print((classification_report(y_true, y_pred)))
         logging.info(('Accurancy: ',self.estimator.score(self.features_test,self.labels_test)))
@@ -59,6 +59,9 @@ def plot_confusion_matrix(cm,
     #     print("Normalized confusion matrix")
     # else:
     #     print('Confusion matrix, without normalization')
+
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1, keepdims = True)
 
     plt.imshow(cm, interpolation='nearest',cmap=plt.cm.Blues)
     plt.title(title)
@@ -77,6 +80,7 @@ def plot_confusion_matrix(cm,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+    plt.savefig('./log/unnormalized_Confusion_Matrix_SVC.png')
     plt.show()  
 if __name__ == '__main__':
     # Read feature extraction 
